@@ -1,8 +1,7 @@
-package com.dmw.crm.exception;
+package com.dmw.crm.exceptions;
 
 import com.alibaba.fastjson.JSON;
 import com.dmw.base.ResultInfo;
-import com.dmw.crm.exceptions.ParamsException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.method.HandlerMethod;
@@ -32,7 +31,16 @@ public class GlobalExceptionResolver implements HandlerExceptionResolver {
 
     @Override
     public ModelAndView resolveException(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) {
-        ModelAndView modelAndView = new ModelAndView("error");
+        ModelAndView modelAndView = new ModelAndView();
+        // 没有登入
+        if (ex instanceof NoLoginException){
+          //  NoLoginException noLoginException =(NoLoginException) ex;
+            modelAndView.setViewName("redirect:/index");
+//            modelAndView.addObject("msg",noLoginException.getMsg());
+//            modelAndView.addObject("ctx",request.getContextPath());
+            return modelAndView;
+        }
+        modelAndView.setViewName("error");
         modelAndView.addObject("code", 500);
         modelAndView.addObject("msg", "发生异常，请重试...");
         if (handler instanceof HandlerMethod) {
