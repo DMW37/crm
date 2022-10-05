@@ -2,7 +2,6 @@ package com.dmw.crm.controller;
 
 import com.dmw.base.BaseController;
 import com.dmw.base.ResultInfo;
-import com.dmw.crm.exceptions.ParamsException;
 import com.dmw.crm.model.UserModel;
 import com.dmw.crm.service.UserService;
 import com.dmw.crm.utils.LoginUserUtil;
@@ -29,7 +28,9 @@ public class UserController extends BaseController {
     @ResponseBody
     public ResultInfo login(String userName, String userPwd) {
         ResultInfo resultInfo = new ResultInfo();
-        try {
+        UserModel userModel = userService.login(userName, userPwd);
+        resultInfo.setResult(userModel);
+        /*try {
             UserModel userModel =
                     userService.login(userName, userPwd);
             resultInfo.setResult(userModel);
@@ -41,7 +42,7 @@ public class UserController extends BaseController {
             e.printStackTrace();
             resultInfo.setMsg("failed");
             resultInfo.setCode(500);
-        }
+        }*/
         return resultInfo;
     }
 
@@ -61,7 +62,8 @@ public class UserController extends BaseController {
     @ResponseBody
     public ResultInfo updatePassword(HttpServletRequest request, String oldPassword, String newPassword, String confirmPassword) {
         ResultInfo resultInfo = new ResultInfo();
-        try {
+        userService.updateUserPassword(LoginUserUtil.releaseUserIdFromCookie(request), oldPassword, newPassword, confirmPassword);
+       /* try {
             userService.updateUserPassword(LoginUserUtil.releaseUserIdFromCookie(request), oldPassword, newPassword, confirmPassword);
         } catch (ParamsException e) {
             e.printStackTrace();
@@ -71,7 +73,7 @@ public class UserController extends BaseController {
             e.printStackTrace();
             resultInfo.setMsg("failed");
             resultInfo.setCode(500);
-        }
+        }*/
         return resultInfo;
     }
 
