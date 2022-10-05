@@ -44,7 +44,7 @@ public interface BaseMapper<T,ID> {
      * @param baseQuery
      * @return
      */
-    public List<T> selectByParams(com.dmw.crm.base.BaseQuery baseQuery) throws DataAccessException;
+    public List<T> selectByParams(BaseQuery baseQuery) throws DataAccessException;
 
 
     /**

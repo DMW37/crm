@@ -114,7 +114,7 @@ public abstract class BaseService<T, ID> {
     }
 
 
-    public Map<String, Object> queryByParamsForTable(com.dmw.crm.base.BaseQuery baseQuery) {
+    public Map<String, Object> queryByParamsForTable(BaseQuery baseQuery) {
         Map<String, Object> result = new HashMap<String, Object>();
         PageHelper.startPage(baseQuery.getPage(), baseQuery.getLimit());
 //        PageInfo<T> pageInfo =new PageInfo<T>(selectByParams(baseQuery));

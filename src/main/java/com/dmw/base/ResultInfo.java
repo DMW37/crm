@@ -1,4 +1,4 @@
-package com.dmw.crm.base;
+package com.dmw.base;
 
 public class ResultInfo {
     private Integer code=200;

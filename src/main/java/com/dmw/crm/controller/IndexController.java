@@ -1,6 +1,7 @@
 package com.dmw.crm.controller;
 
-import com.dmw.crm.base.BaseController;
+
+import com.dmw.base.BaseController;
 import com.dmw.crm.dto.User;
 import com.dmw.crm.service.impl.UserServiceImpl;
 import com.dmw.crm.utils.LoginUserUtil;

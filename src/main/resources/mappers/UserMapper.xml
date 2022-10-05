@@ -28,4 +28,8 @@
     <select id="selectByPrimaryKey" resultType="user" parameterType="int">
         select <include refid="Base_Column_List"></include> from t_user where id = #{userId}
     </select>
+
+    <update id="updateByPrimaryKeySelective" parameterType="user">
+        update t_user set user_pwd =  #{userPwd},update_date = #{updateDate} where id = #{id}
+    </update>
 </mapper>

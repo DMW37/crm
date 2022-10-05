@@ -15,4 +15,6 @@ public interface UserService {
      * @return
      */
     UserModel login(String userName, String userPwd);
+
+    void updateUserPassword(int userId, String oldPassword, String newPassword, String confirmPassword);
 }

@@ -1,4 +1,4 @@
-package com.dmw.crm.base;
+package com.dmw.base;
 
 
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -14,18 +14,18 @@ public class BaseController {
     }
 
 
-    public com.dmw.crm.base.ResultInfo success() {
-        return new com.dmw.crm.base.ResultInfo();
+    public ResultInfo success() {
+        return new ResultInfo();
     }
 
-    public com.dmw.crm.base.ResultInfo success(String msg) {
-        com.dmw.crm.base.ResultInfo resultInfo = new com.dmw.crm.base.ResultInfo();
+    public ResultInfo success(String msg) {
+        ResultInfo resultInfo = new ResultInfo();
         resultInfo.setMsg(msg);
         return resultInfo;
     }
 
-    public com.dmw.crm.base.ResultInfo success(String msg, Object result) {
-        com.dmw.crm.base.ResultInfo resultInfo = new com.dmw.crm.base.ResultInfo();
+    public ResultInfo success(String msg, Object result) {
+        ResultInfo resultInfo = new ResultInfo();
         resultInfo.setMsg(msg);
         resultInfo.setResult(result);
         return resultInfo;
