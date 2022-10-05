@@ -7,5 +7,19 @@ layui.use(['element', 'layer', 'layuimini','jquery','jquery_cookie'], function (
     $('#layuiminiHomeTabIframe').html('<iframe width="100%" height="100%" frameborder="0"  src="welcome"></iframe>')
     layuimini.initTab();
 
+    /**
+     * 用户退出
+     */
+    $(".login-out").click(function () {
+        layer.confirm("确认退出系统么?",{icon:3,title:"系统提示"},function (index) {
+            layer.close(index)
+
+            $.removeCookie("userIdStr",{domain:'localhost',path:"/crm"})
+            $.removeCookie("userName",{domain:'localhost',path:"/crm"})
+            $.removeCookie("trueName",{domain:'localhost',path:"/crm"})
+            // 父窗口跳转
+            window.parent.location.href=ctx+"/index"
+        })
+    })
 
 });
