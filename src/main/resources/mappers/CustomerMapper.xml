@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dmw.crm.dao.CustomerMapper">
+
+    <resultMap id="BaseResultMap" type="com.dmw.crm.dto.Customer">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="khno" column="khno" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="area" column="area" jdbcType="VARCHAR"/>
+            <result property="cusManager" column="cus_manager" jdbcType="VARCHAR"/>
+            <result property="level" column="level" jdbcType="VARCHAR"/>
+            <result property="myd" column="myd" jdbcType="VARCHAR"/>
+            <result property="xyd" column="xyd" jdbcType="VARCHAR"/>
+            <result property="address" column="address" jdbcType="VARCHAR"/>
+            <result property="postCode" column="post_code" jdbcType="VARCHAR"/>
+            <result property="phone" column="phone" jdbcType="VARCHAR"/>
+            <result property="fax" column="fax" jdbcType="VARCHAR"/>
+            <result property="webSite" column="web_site" jdbcType="VARCHAR"/>
+            <result property="yyzzzch" column="yyzzzch" jdbcType="VARCHAR"/>
+            <result property="fr" column="fr" jdbcType="VARCHAR"/>
+            <result property="zczj" column="zczj" jdbcType="VARCHAR"/>
+            <result property="nyye" column="nyye" jdbcType="VARCHAR"/>
+            <result property="khyh" column="khyh" jdbcType="VARCHAR"/>
+            <result property="khzh" column="khzh" jdbcType="VARCHAR"/>
+            <result property="dsdjh" column="dsdjh" jdbcType="VARCHAR"/>
+            <result property="gsdjh" column="gsdjh" jdbcType="VARCHAR"/>
+            <result property="state" column="state" jdbcType="INTEGER"/>
+            <result property="isValid" column="is_valid" jdbcType="INTEGER"/>
+            <result property="createDate" column="create_date" jdbcType="TIMESTAMP"/>
+            <result property="updateDate" column="update_date" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,khno,name,
+        area,cus_manager,level,
+        myd,xyd,address,
+        post_code,phone,fax,
+        web_site,yyzzzch,fr,
+        zczj,nyye,khyh,
+        khzh,dsdjh,gsdjh,
+        state,is_valid,create_date,
+        update_date
+    </sql>
+</mapper>
