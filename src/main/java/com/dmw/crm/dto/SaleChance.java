@@ -1,8 +1,10 @@
 package com.dmw.crm.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * 
@@ -63,6 +65,7 @@ public class SaleChance implements Serializable {
     /**
      * 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date assignTime;
 
     /**
@@ -78,16 +81,19 @@ public class SaleChance implements Serializable {
     /**
      * 
      */
+
     private Integer isValid;
 
     /**
      * 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date createDate;
 
     /**
      * 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss",timezone = "GMT+8")
     private Date updateDate;
 
     private static final long serialVersionUID = 1L;
